@@ -1,0 +1,21 @@
+<form [formGroup]="usuarioForm" *ngIf="usuario">
+    <div>
+        <label for="nome"> Nome: </label>
+        <input id="nome" [(ngModel)]="usuario!.nome" type="text" formControlName="nome" [disabled]="true">
+    </div>
+    <div>
+        <label for="email"> E-mail: </label>
+        <input id="email" [(ngModel)]="usuario!.email" type="text" formControlName="email" [disabled]="true">
+    </div>
+    <div>
+        <label for="telefone"> Telefone: </label>
+        <input id="telefone" [(ngModel)]="usuario!.telefone" type="text" formControlName="telefone" [disabled]="true">
+    </div>
+    <div>
+        <label for="sexo"> Sexo: </label>
+        <select required class="form-control" id="sexo" required [(ngModel)]="usuario!.sexo" formControlName="sexo" [disabled]="true">
+            <option *ngFor="let pow of sexo" [value]="pow">{{pow}}</option>
+        </select>
+    </div>
+    <button routerLink="">Voltar</button>
+</form>

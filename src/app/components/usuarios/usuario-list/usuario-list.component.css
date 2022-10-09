@@ -1,0 +1,63 @@
+.barra-superior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lista-de-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+    background: rgb(221, 216, 212, 0.3);
+    margin: 20px;
+    border-radius: 10px;
+    transition: background 1s ease-in-out;
+    width: 300px;
+}
+
+.card:hover {
+    background: rgb(221, 216, 212, 0.8);
+}
+
+.botoes-card,
+.botoes-barra-superior {
+    flex-direction: row;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    margin: 10x;
+}
+
+.botoes-barra-superior {
+    width: 50px;
+}
+
+#idusuario {
+    text-align: center;
+    width: 100%;
+}
+
+#botaoadicionar {
+    width: 200px;
+}
+
+p {
+    display: flex;
+    margin: 5px;
+}
+
+p mat-icon {
+    margin-right: 15px;
+}

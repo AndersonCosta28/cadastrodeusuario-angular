@@ -1,0 +1,42 @@
+<div class="barra-superior">
+    <h1>Lista de usuários</h1>
+    <div class="botoes-barra-superior">
+        <div [routerLink]="['novo']" class="botoes-opcoes" id="botao-adicionar">
+            <mat-icon>person_add</mat-icon>
+        </div>
+    </div>
+</div>
+
+<div class="lista-de-cards">
+    <div *ngFor="let usuario of usuarios" class="card">
+        <h3 id="idusuario">#{{usuario.id}}</h3>
+        <!-- [routerLink]="['visualizar', usuario.id]" -->
+        <p>
+            <mat-icon>account_circle</mat-icon>
+            <span>{{usuario.nome}}</span>
+        </p>
+        <p>
+            <mat-icon> mail_outline</mat-icon>
+            <span>{{usuario.email}}</span>
+        </p>
+        <p>
+            <mat-icon> phone</mat-icon>
+            <span>{{usuario.telefone}}</span>
+        </p>
+        <p>
+            <mat-icon>wc</mat-icon>
+            <span>{{usuario.sexo}}</span>
+        </p>
+        <div class="botoes-card">
+
+            <div [routerLink]="['editar', usuario.id]" class="botoes-opcoes">
+                <mat-icon>edit</mat-icon>
+            </div>
+
+            <div (click)="Deletar(usuario.id!)" class="botoes-opcoes">
+                <mat-icon>delete</mat-icon>
+            </div>
+
+        </div>
+    </div>
+</div>
