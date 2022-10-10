@@ -1,21 +1,23 @@
 <form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()" #usarioForm="ngForm" *ngIf="usuario" class="container">
     <h1>Formulário de atualização de cadastro</h1>
     <div class="campos">
-        <label for="nome"> Nome: </label>
-        <input id="nome" required minlength="5" [(ngModel)]="usuario!.nome"  type="text" formControlName="nome" >
+        <label for="nome">Nome:</label>
+        <input id="nome" required pattern="^[a-zA-Z ]{8,}$" [(ngModel)]="usuario!.nome" type="text" formControlName="nome">
     </div>
     <div class="campos">
-        <label for="email"> E-mail: </label>
-        <input id="email" required [(ngModel)]="usuario!.email" type="text" formControlName="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$">
+        <label for="email">E-mail:</label>
+        <input id="email" required [(ngModel)]="usuario!.email" type="text" formControlName="email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$">
     </div>
     <div class="campos">
-        <label for="telefone"> Telefone: </label>
-        <input id="telefone" required [(ngModel)]="usuario!.telefone" type="text" formControlName="telefone" >
+        <label for="telefone">Telefone:</label>
+        <input id="telefone" required [(ngModel)]="usuario!.telefone" type="tel"
+            pattern="^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9]){9,20}$" formControlName="telefone">
     </div>
     <div class="campos">
-        <label for="sexo"> Sexo: </label>
+        <label for="sexo">Sexo:</label>
         <select required class="form-control" id="sexo" required [(ngModel)]="usuario!.sexo" formControlName="sexo">
-            <option *ngFor="let pow of sexo" [value]="pow">{{pow}}</option>
+            <option *ngFor="let s of sexo" [value]="s">{{s}}</option>
         </select>
     </div>
     <div class="botoes">

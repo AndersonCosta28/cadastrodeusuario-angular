@@ -30,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot({
-      timeOut: 10000,
+      timeOut: 3000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),
